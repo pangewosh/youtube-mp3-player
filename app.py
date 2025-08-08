@@ -4,13 +4,19 @@ from yt_dlp import YoutubeDL
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 CORS(app)
 app.config['UPLOAD_FOLDER'] = 'downloads'
 app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024  # 1000MB max file size
 
 # Ensure the downloads directory exists
-os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+try:
+    os.makedirs(os.path.join(os.getcwd(), app.config['UPLOAD_FOLDER']), exist_ok=True)
+except Exception as e:
+    print(f"Error creating downloads directory: {e}")
+    # Try alternative location if default fails
+    app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'downloads')
+    os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 def download_audio(url):
     ydl_opts = {
