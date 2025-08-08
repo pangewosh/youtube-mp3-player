@@ -1,0 +1,73 @@
+/* Custom styles for the MP3 player */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Player controls */
+#playPauseBtn {
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#playPauseBtn:hover {
+    transform: scale(1.05);
+    background-color: #2563eb;
+}
+
+/* Progress bar */
+#progressBar {
+    transition: width 0.1s linear;
+}
+
+/* Playlist items */
+#playlist {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* Download status */
+#downloadStatus {
+    min-height: 24px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    #youtubeUrl {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+}

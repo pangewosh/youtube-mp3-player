@@ -1,0 +1,21 @@
+{
+  "name": "YouTube MP3 Çalar",
+  "short_name": "MP3 Çalar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
+  "description": "YouTube'dan MP3 indir ve çevrimdışı çal.",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
